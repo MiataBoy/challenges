@@ -24,6 +24,7 @@ const images = [
 
 // Shuffle the images
 shuffleArray(images);
+attempts = 0;
 
 // Create image elements and assign click event listeners
 const imageContainer = document.getElementById('images');
@@ -81,12 +82,14 @@ function flipCard(card, index) {
 }
 
 function checkForMatch() {
+    attempts++;
+    console.log(attempts)
     if (images[firstCard.index] === images[secondCard.index]) {
         disableCards();
         const matchedCards = document.querySelectorAll('.match');
         if (matchedCards.length === images.length) {
             setTimeout(() => {
-                alert('Congratulations! You won the game!');
+                alert(`Congratulations! You won the game!\n${attempts} attempts.`);
             }, 500);
         }
     } else {
