@@ -1,0 +1,12 @@
+#images {
+    text-align: center;
+}
+
+.image-wrapper {
+    display: inline-block;
+}
+
+div {
+    width: 200px;
+    display: inline-block;
+}
